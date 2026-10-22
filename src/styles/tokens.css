@@ -1,0 +1,230 @@
+:root,
+[data-theme='light'] {
+  /* Brand */
+  --vh-primary: #1B4DFF;
+  --vh-primary-dark: #0E35C9;
+  --vh-primary-soft: #E8EEFF;
+  --vh-secondary: #10B981;
+  --vh-secondary-soft: #D1FAE5;
+  --vh-accent: #FF7A1A;
+  --vh-accent-soft: #FFE8D6;
+
+  /* Semantic */
+  --vh-success: #16A34A;
+  --vh-warning: #F59E0B;
+  --vh-danger: #EF4444;
+  --vh-info: #3B82F6;
+
+  /* Surfaces — Light */
+  --vh-bg: #F4F6FA;
+  --vh-bg-elevated: #FFFFFF;
+  --vh-bg-muted: #EEF1F7;
+  --vh-bg-glass: rgba(255, 255, 255, 0.72);
+  --vh-border: #E2E8F0;
+  --vh-border-strong: #CBD5E1;
+  --vh-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --vh-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --vh-shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
+
+  /* Text */
+  --vh-text: #0F172A;
+  --vh-text-secondary: #475569;
+  --vh-text-muted: #94A3B8;
+  --vh-text-inverse: #FFFFFF;
+  --vh-text-on-primary: #FFFFFF;
+
+  /* Layout */
+  --vh-radius-sm: 8px;
+  --vh-radius-md: 12px;
+  --vh-radius-lg: 16px;
+  --vh-radius-xl: 24px;
+  --vh-radius-full: 999px;
+  --vh-space: 8px;
+  --vh-phone-w: 390px;
+  --vh-phone-h: 844px;
+  --vh-nav-h: 72px;
+  --vh-safe-top: 44px;
+  --vh-safe-bottom: 20px;
+
+  /* Typography */
+  --vh-font-en: 'Poppins', system-ui, sans-serif;
+  --vh-font-ur: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
+  --vh-font: var(--vh-font-en);
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --vh-primary: #4C7DFF;
+  --vh-primary-dark: #1B4DFF;
+  --vh-primary-soft: #1A2748;
+  --vh-secondary: #34D399;
+  --vh-secondary-soft: #0F3D2E;
+  --vh-accent: #FF9A4D;
+  --vh-accent-soft: #3D2A1A;
+
+  --vh-success: #22C55E;
+  --vh-warning: #FBBF24;
+  --vh-danger: #F87171;
+  --vh-info: #60A5FA;
+
+  --vh-bg: #0B1220;
+  --vh-bg-elevated: #121A2B;
+  --vh-bg-muted: #1A2336;
+  --vh-bg-glass: rgba(18, 26, 43, 0.78);
+  --vh-border: #243044;
+  --vh-border-strong: #334155;
+  --vh-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --vh-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --vh-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+
+  --vh-text: #F8FAFC;
+  --vh-text-secondary: #CBD5E1;
+  --vh-text-muted: #64748B;
+  --vh-text-inverse: #0F172A;
+  --vh-text-on-primary: #FFFFFF;
+
+  color-scheme: dark;
+}
+
+[dir='rtl'] {
+  --vh-font: var(--vh-font-ur);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--vh-font);
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(27, 77, 255, 0.12), transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(16, 185, 129, 0.1), transparent 45%),
+    #0A0F1C;
+  color: var(--vh-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.ur-text {
+  font-family: var(--vh-font-ur);
+  line-height: 1.8;
+}
+
+.en-text {
+  font-family: var(--vh-font-en);
+}
+
+/* Utility */
+.vh-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--vh-bg);
+  color: var(--vh-text);
+  position: relative;
+  overflow: hidden;
+}
+
+.vh-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(var(--vh-nav-h) + 12px);
+}
+
+.vh-scroll.no-nav {
+  padding-bottom: 24px;
+}
+
+.vh-section {
+  padding: 0 16px;
+  margin-bottom: 20px;
+}
+
+.vh-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.vh-section-title h3 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.vh-section-title .see-all {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vh-primary);
+}
+
+.vh-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vh-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.vh-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.vh-muted {
+  color: var(--vh-text-muted);
+}
+
+.vh-secondary-text {
+  color: var(--vh-text-secondary);
+}
